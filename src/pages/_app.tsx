@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import Image from "next/future/image";
+import Head from "next/head";
 
 import { globalStyles } from "../styles/global";
 
@@ -11,6 +12,11 @@ globalStyles();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+    <>
+    <Head>
+      <title>Ignite Shop</title>
+    </Head>
+    
     <Container>
       <Header>
         <Image src={logoImg} alt="" />
@@ -18,5 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
     </Container>
+    </>
   );
 }
